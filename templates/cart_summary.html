@@ -480,10 +480,13 @@
 
                     </div>
                     <div class="item-actions">
-                        <button class="remove-btn" onclick="removeItem('item1')">
+                        <button class="remove-btn   delete-product" type="button" data-index="{{product.id}}">
                             <i class="fas fa-trash-alt"></i> Remove
                         </button>
+                          <!-- <button type="button" data-index="{{product.id}}" class="btn btn-danger delete-product">Remove</button> -->
+
                     </div>
+                    
                 </div>
 
 
@@ -538,7 +541,36 @@
             <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                 integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+<script>
+    // Delete Item From CartAdd commentMore actions
+$(document).on('click', '.delete-product', function(e){
+    e.preventDefault();
+    // grab the product id
+    //var productid = $(this).data('index');
 
+    $.ajax({
+    type: 'POST',
+    url: "{% url 'cart_delete' %}",
+    data: {
+      product_id: $(this).data('index'),
+      csrfmiddlewaretoken: '{{ csrf_token }}',
+      action: 'post'
+    },
+    success: function(json){
+        //console.log(json)
+        //document.getElementById("cart_quantity").textContent = json.qty
+        location.reload();
+    },
+
+    error: function(xhr, errmsg, err){
+
+    }
+
+
+    });
+
+})
+</script>
    
 
 </body>
