@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+ <header class="category-header">
+        <div class="category-header-content">
+            <h1 class="category-title">Explore Our Categories</h1>
+            <p class="category-subtitle">Discover amazing products and services across various categories that suit your needs</p>
+            <div class="category-search">
+                <input type="text" class="category-search-input" placeholder="Search categories...">
+                <button class="category-search-button">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="category-main">
+        <div class="category-filter-container">
+            <button class="category-filter category-filter-active">All</button>
+            {% if category %}
+                {% for cat in category %}
+                 <button class="category-filter">{{cat.name}}</button>
+                {% endfor %}
+            {% else %}
+                 sorry ! 
+            {% endif %}
+        </div>
+
+        <div class="category-grid">
+            <!-- Category Card 1 -->
+
+              {% if category %}
+                {% for cat in category %}
+               <div class="category-card">
+                <span class="category-card-badge">Popular</span>
+                <img src="{{cat.image.url}}" alt="Laptop" class="category-card-image">
+                <div class="category-card-content">
+                    <h3 class="category-card-title">{{cat.name}}</h3>
+                    <p class="category-card-description">{{ cat.description}}</p>
+                    <div class="category-card-footer">
+                        <!-- <span class="category-card-price">From $899</span> -->
+                        <button class="category-card-button">Explore</button>
+                    </div>
+                </div>
+            </div>
+                {% endfor %}
+            {% else %}
+                 sorry ! 
+            {% endif %}
+      
+
+     
+        </div>
+    </main>
+
+ 
+    {% endblock %}
