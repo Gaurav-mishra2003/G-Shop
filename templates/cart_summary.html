@@ -466,16 +466,17 @@
                                 <span>{{product.price}}</span>
                             </div>
                         </div>
-                        <!-- {% for key, value in quantities.items %}
+                        {% for key, value in quantities.items %}
                         {% if key == product.id|slugify %}
-                        <div class="quantity-selector">
+                        <!-- <div class="quantity-selector">
                             <button class="quantity-btn minus">-</button>
                             <input type="number" class="quantity-input" value="" min="1" max="10">
                             <button class="quantity-btn plus">+</button>
-                        </div>
-
+                        </div> -->
+                         <span class="summary-value">({{value}})</span>
+        
                         {% endif %}
-                        {% endfor %} -->
+                        {% endfor %}
 
 
                     </div>
@@ -506,8 +507,8 @@
 
                 <div class="cart-summary">
                     <div class="summary-row">
-                        <span class="summary-label">Subtotal (3 items)</span>
-                        <span class="summary-value">$557.00</span>
+                        <span class="summary-label">Subtotal ({{ cart|length }} items)</span>
+                        <span class="summary-value">${{totals}}</span>
                     </div>
                     <div class="summary-row">
                         <span class="summary-label">Shipping</span>
@@ -519,7 +520,7 @@
                     </div>
                     <div class="summary-row total-row">
                         <span class="summary-label total-label">Total</span>
-                        <span class="summary-value total-value">$601.56</span>
+                        <span class="summary-value total-value">${{totals}}</span>
                     </div>
                 </div>
 
