@@ -386,10 +386,10 @@
             }
         }
 
-       .button-link {
+        .button-link {
             text-decoration: none;
             list-style: none;
-          
+
             cursor: pointer;
             display: inline-block;
             transition: background-color 0.3s ease;
@@ -466,18 +466,18 @@
                                 <span>{{product.price}}</span>
                             </div>
                         </div>
-                          {% for key, value in quantities.items %}
-                {% if key == product.id|slugify %}
-           <div class="item-quantity">
-                            <button class="quantity-btn minus" onclick="updateQuantity('item3', -1)">-</button>
-                            <input type="number" class="quantity-input" value="{{value}}" min="1" id="quantity3">
-                            <button class="quantity-btn plus" onclick="updateQuantity('item3', 1)">+</button>
+                        <!-- {% for key, value in quantities.items %}
+                        {% if key == product.id|slugify %}
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="" min="1" max="10">
+                            <button class="quantity-btn plus">+</button>
                         </div>
 
-                {% endif %}
-            {% endfor %}
-                           
-                        
+                        {% endif %}
+                        {% endfor %} -->
+
+
                     </div>
                     <div class="item-actions">
                         <button class="remove-btn" onclick="removeItem('item1')">
@@ -534,6 +534,12 @@
             </div>
 
 
+
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+   
 
 </body>
 
