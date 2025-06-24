@@ -27,7 +27,7 @@
             {% if user.is_authenticated %}
             <li><a href="{% url 'logout'%}" class="fade-in delay-2">logout</a></li>
             <li><a href="{% url 'update_user' %}" class="fade-in delay-2">Update_profile</a></li>
-            <li><a href="{% url 'update_info'%}" class="fade-in delay-2">User_Info</a></li>
+            <!-- <li><a href="{% url 'update_info'%}" class="fade-in delay-2">User_Info</a></li> -->
             {% else %}
             <li><a href="{% url 'login'%}" class="fade-in delay-2">login</a></li>
             <li><a href="{% url 'register'%}" class="fade-in delay-3">register</a></li>
@@ -53,7 +53,9 @@
         </ul>
         <div class="nav-icons">
             <a href="{% url 'search' %}" class="fade-in"><i class="fas fa-search"></i></a>
-            <a href="#" class="fade-in"><i class="fas fa-user"></i></a>
+             {% if user.is_authenticated %}
+            <a href="{% url 'update_info'%}" class="fade-in"><i class="fas fa-user"></i></a>
+            {% endif %}
             <a href="{% url 'cart_summary' %}" class="fade-in">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="cart-count" id="cart_quantity">{{ cart|length }}</span>

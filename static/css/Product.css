@@ -38,6 +38,14 @@
             position: relative;
             display: inline-block;
         }
+         .button-link {
+            text-decoration: none;
+            list-style: none;
+
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
 
         .title::after {
             content: '';
