@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update User</title>
+    <title>update profile</title>
 </head>
 <body>
-
+   
+<!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Update user info..</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Update User Info...</p>
+                    <h1 class="display-4 fw-bolder">Update profile</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Update User Profile info...</p>
                 </div>
             </div>
         </header>
@@ -22,18 +23,26 @@
         			<div class="col-md-6 offset-md-3">
 
         				<br/><br/>
-<form method="POST" action="{% url 'update_user' %}">
+<form method="POST" action="{% url 'update_info' %}">
     {% csrf_token %}
     
-    {{ user_form.as_p }}
+    {{ form.as_p }}
     <br/><br/>
     <button type="submit" class="btn btn-secondary">
-      Update user
+      Update Profile
     </button>
-  
 </form>
 
+<br/><br/>
 
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
         			</div>
         		
         	</div>
